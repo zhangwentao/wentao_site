@@ -1,6 +1,9 @@
 #vim
 *.swp
 
+#private setting file
+key.py
+
 #python
 *.py[cod]
 
