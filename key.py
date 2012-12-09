@@ -1,18 +1,26 @@
 # some private account settings
-setting= {
-			'local':{
-				'database':{
-					'name':'',
-					'user':'',
-					'passwd':''
+MODE = 'local'
+
+settings = {
+			'local': {
+				'database': {
+					'name': '',
+					'user': '',
+					'password': '',
+					'host': '',
+					'port': ''
 				}
 			},
 
-			'remote':{
-				'database':{
-					'name':'',
-					'user':'',
-					'passwd':''
+			'remote': {
+				'database': {
+					'name': '',
+					'user': '',
+					'password': '',
+					'host': '',
+					'port': ''
 				}
 			}
 		}
+
+setting = settings[MODE]
