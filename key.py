@@ -9,7 +9,11 @@ settings = {
 					'password': '',
 					'host': '',
 					'port': ''
-				}
+				},
+				'staticfiles_dir':'',
+				'template_dirs':(
+					'',
+				)
 			},
 
 			'remote': {
@@ -19,7 +23,11 @@ settings = {
 					'password': '',
 					'host': '',
 					'port': ''
-				}
+				},
+				'staticfiles_dir':'',
+				'template_dirs':(
+					'',
+				)
 			}
 		}
 
