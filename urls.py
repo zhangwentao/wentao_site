@@ -1,17 +1,16 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls.defaults import *
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
+from key import setting
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'wentao_site.views.home', name='home'),
-    # url(r'^wentao_site/', include('wentao_site.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
+	url('^blog/',include('blog.urls')),
+	url('^',include('blog.urls')),
+	(r'^static/(?P<path>.*)$', 'django.views.static.serve',{'document_root': setting['staticfiles_dir']}),
 )
+
+handler404 = 'blog.views.handle404'
+handler500 = 'blog.views.handle500'

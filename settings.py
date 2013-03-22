@@ -1,4 +1,8 @@
 # Django settings for wentao_site project.
+# some private settings
+import key
+KEY_DICT = key.setting
+key_db = KEY_DICT['database']
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -11,12 +15,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': key_db['name'],               # Or path to database file if using sqlite3.
+        'USER': key_db['user'],               # Not used with sqlite3.
+        'PASSWORD': key_db['password'],         # Not used with sqlite3.
+        'HOST': key_db['host'],                      	  # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                           # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -102,11 +106,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'wentao_site.urls'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+TEMPLATE_DIRS = KEY_DICT['template_dirs']
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -115,10 +115,12 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'django.contrib.markup',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+	'blog',
 )
 
 # A sample logging configuration. The only tangible logging
