@@ -9,7 +9,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 	url('^blog/',include('blog.urls')),
 	url('^',include('blog.urls')),
-	(r'^static/(?P<path>.*)$', 'django.views.static.serve',{'document_root': setting['staticfiles_dir']}),
 )
 
 handler404 = 'blog.views.handle404'
