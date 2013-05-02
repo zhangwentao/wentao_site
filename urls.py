@@ -10,6 +10,7 @@ urlpatterns = patterns('',
 	url('^blog/',include('blog.urls')),
 	url('^',include('blog.urls')),
 	url('^accountbook/',include('accountbook.urls')),
+	url('^upload/',include('upload.urls'))
 )
 
 handler404 = 'blog.views.handle404'

@@ -121,7 +121,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 	'blog',
-	'accountbook'
+	'accountbook',
+	'upload'
 )
 
 # A sample logging configuration. The only tangible logging
